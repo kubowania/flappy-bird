@@ -37,12 +37,12 @@
 }
 
 .sky {
-  background-image: url('fb-game-background.png');
+  background-image: url("fb-game-background.png");
   width: 500px;
   height: 580px;
   position: absolute;
   top: 60px;
-  
+  z-index: -1;
 }
 
 .bird {
@@ -52,15 +52,24 @@
   position: absolute;
 }
 
+.other-bird {
+  background-color: blue;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  z-index: -1;
+  opacity: 0.5;
+}
+
 .obstacle {
-  background-image: url('flappybird-pipe.png');
+  background-image: url("flappybird-pipe.png");
   width: 60px;
   height: 300px;
   position: absolute;
 }
 
 .ground {
-  background-image: url('bottom-background.png');
+  background-image: url("bottom-background.png");
   width: 500px;
   height: 150px;
   position: absolute;

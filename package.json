@@ -1,0 +1,25 @@
+{
+  "name": "flappy-bird",
+  "version": "1.0.0",
+  "description": "multiplayer game of flappy bird",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kubowania/flappy-bird.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kubowania/flappy-bird/issues"
+  },
+  "homepage": "https://github.com/kubowania/flappy-bird#readme",
+  "dependencies": {
+    "ably": "^1.2.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  }
+}
