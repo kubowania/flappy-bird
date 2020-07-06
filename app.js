@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
     birdBottom -= gravity
     bird.style.bottom = birdBottom + 'px'
     bird.style.left = birdLeft + 'px'
-    if (birdBottom === 0) gameOver()
   }
   let timerId = setInterval(startGame, 20)
 
@@ -59,7 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log(obstacleBottom + gap)
       if (
         obstacleLeft > 200 && obstacleLeft < 280 && birdLeft === 220 && 
-        (birdBottom < obstacleBottom + 210 || birdBottom > obstacleBottom + gap - 150)
+        (birdBottom < obstacleBottom + 210 || birdBottom > obstacleBottom + gap - 150) ||
+        birdBottom === 0
         ) {
         gameOver() 
         clearInterval(timerId)
