@@ -30,6 +30,16 @@ document.addEventListener("DOMContentLoaded", () => {
     birdBottom -= gravity;
     bird.style.bottom = birdBottom + "px";
     bird.style.left = birdLeft + "px";
+    for (key in OtherBirds) {
+      if (OtherBirds[key].targetBottom) {
+        let tempb = parseInt(OtherBirds[key].el.style.bottom);
+        tempb +=
+          (OtherBirds[key].targetBottom -
+            parseInt(OtherBirds[key].el.style.bottom)) *
+          0.2;
+        OtherBirds[key].el.style.bottom = tempb + "px";
+      }
+    }
     if (birdBottom === 0) gameOver();
   }
   let timerId = setInterval(startGame, 20);
@@ -105,8 +115,8 @@ document.addEventListener("DOMContentLoaded", () => {
           let newLeft = msg.data.birds[key].left;
           let newBottom = msg.data.birds[key].bottom;
           if (OtherBirds[key]) {
-            OtherBirds[key].el.style.left = newLeft + "px";
-            OtherBirds[key].el.style.bottom = newBottom + "px";
+            OtherBirds[key].targetLeft = newLeft + "px";
+            OtherBirds[key].targetBottom = newBottom;
           } else {
             OtherBirds[key] = {};
             OtherBirds[key].el = document.createElement("div");
