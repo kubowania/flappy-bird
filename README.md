@@ -3,6 +3,8 @@ A game of Flappy Bird made in pure JavaScript, HTML and CSS
 
 Watch the full video [here](https://youtu.be/gxHcW84izz0).
 
+Srushtikas code for implementing Ably: https://github.com/Srushtika/multiplayer-flappy-bird
+
 Hey Everyone! This is a really exciting video. Not only are we going to learn how to make Flappy Bird in pure JavaScript, HTML and CSS (No canvas required), but we are going to learn how to:
 
 - Deploy it onto a website so we can share it, thanks to Fleek.
