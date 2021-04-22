@@ -17,18 +17,13 @@ document.addEventListener('DOMContentLoaded' , () => {
     }
     let gameTimerId = setInterval(startGame, 20)
 
-    function control(e) {
-        if (e.keyCode === 32) {
-            jump()
-        }
-    }
+   document.addEventListener('click',jump)
 
     function jump() {
         if (birdBottom < 500) birdBottom += 50
         bird.style.bottom = birdBottom + 'px'
         console.log(birdBottom)
     }
-    document.addEventListener('keyup', control)
 
 
     function generateObstacle() {
@@ -78,7 +73,7 @@ document.addEventListener('DOMContentLoaded' , () => {
         clearInterval(gameTimerId)
         console.log('game over')
         isGameOver = true
-        document.removeEventListener('keyup', control)
+        document.removeEventListener('click', control)
         ground.classList.add('ground')
         ground.classList.remove('ground-moving')
     }
