@@ -1,24 +1,34 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Flappy Bird</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="app.js" charset="utf-8"></script>
   </head>
   <body>
-
-  <div class="border-left"></div>
-  <div class="game-container">
+    <div class="border-left"></div>
+    <div class="game-container">
+      <div class="score">
+        <h1>0</h1>
+      </div>
       <div class="border-top"></div>
       <div class="sky">
-          <div class="bird"></div>
+        <div class="bird"></div>
       </div>
-  </div>
-  <div class="ground-container">
-    <div class="ground-moving"></div>
-  </div>
-  <div class="border-right"></div>
+    </div>
+    <div class="ground-container">
+      <div class="ground-moving"></div>
+    </div>
+    <div id="newgame" class="newgame">
+      <h1>Flappy Bird - By kubowania</h1>
+      <button onclick="newGame()">Start Game</button>
+    </div>
+    <div id="restart">
+      <h1>Game Over</h1>
+      <button id="playagain">Restart Game</button>
+    </div>
 
+    <div class="border-right"></div>
   </body>
 </html>
