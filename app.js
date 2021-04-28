@@ -1,13 +1,21 @@
-document.addEventListener('DOMContentLoaded' , () => {
+ function newGame(){
+    const newgame = document.querySelector("#newgame")
     const bird = document.querySelector('.bird')
     const gameDisplay = document.querySelector('.game-container')
     const ground = document.querySelector('.ground-moving')
+    const restart = document.querySelector("#restart");
+    const playagain = document.querySelector('#playagain')
+    const disscore = document.querySelector('.score');
+
+    
+newgame.remove();
 
     let birdLeft = 220
     let birdBottom = 100
     let gravity = 3
     let isGameOver = false
     let gap = 430
+    let score = 0;
 
 
     function startGame() {
@@ -49,6 +57,7 @@ document.addEventListener('DOMContentLoaded' , () => {
         topObstacle.style.bottom = obstacleBottom + gap + 'px'
 
         function moveObstacle() {
+       
             obstacleLeft -=2
             obstacle.style.left = obstacleLeft + 'px'
             topObstacle.style.left = obstacleLeft + 'px'
@@ -57,6 +66,9 @@ document.addEventListener('DOMContentLoaded' , () => {
                 clearInterval(timerId)
                 gameDisplay.removeChild(obstacle)
                 gameDisplay.removeChild(topObstacle)
+                score += 1;
+                console.log("Score is" + score);
+                disscore.textContent = `Score : ${score}`;
             }
             if (
                 obstacleLeft > 200 && obstacleLeft < 280 && birdLeft === 220 &&
@@ -81,7 +93,13 @@ document.addEventListener('DOMContentLoaded' , () => {
         document.removeEventListener('keyup', control)
         ground.classList.add('ground')
         ground.classList.remove('ground-moving')
+        restart.classList.add('active');
     }
 
+    playagain.addEventListener("click" , function startagian(){
+        restart.classList.remove("active");
+        location.reload();
+    })
 
-})
+
+ }

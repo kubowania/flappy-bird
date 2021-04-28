@@ -1,114 +1,158 @@
 body {
-    display: flex;
+  display: flex;
+  background-color: black;
 }
 
 .game-container {
-    width: 500px;
-    height: 730px;
-    position: absolute;
-    left: 80px;
+  width: 500px;
+  height: 730px;
+  position: absolute;
+  left: 80px;
 }
 
 .border-left {
-    width: 80px;
-    height: 790px;
-    position:  absolute;
-    background-color: white;
-    z-index: +2;
+  width: 80px;
+  height: 790px;
+  position: absolute;
+  background-color: #000;
+  z-index: +2;
 }
 
 .border-right {
-    width: 80px;
-    height: 790px;
-    position: absolute;
-    background-color: white;
-    z-index: +2;
-    left: 580px;
+  width: 80px;
+  height: 790px;
+  position: absolute;
+  background-color: #000;
+  z-index: +2;
+  left: 580px;
 }
 
 .border-top {
-    width: 660px;
-    height: 50px;
-    position:  absolute;
-    background-color: white;
-    z-index: +2;
-    top: -50px;
+  width: 660px;
+  height: 50px;
+  position: absolute;
+  background-color: #000;
+  z-index: +2;
+  top: -50px;
 }
 
 .sky {
-    background-image: url('fb-game-background.png');
-    width: 500px;
-    height: 580px;
-    position: absolute;
+  background-image: url("fb-game-background.png");
+  width: 500px;
+  height: 580px;
+  position: absolute;
 }
 
 .ground {
-    background-image: url('bottom-background.png');
-    width: 500px;
-    height: 150px;
-    position: absolute;
-    top: 580px;
-    z-index: +1;
+  background-image: url("bottom-background.png");
+  width: 500px;
+  height: 150px;
+  position: absolute;
+  top: 580px;
+  z-index: +1;
 }
 
 .bird {
-    background-image: url('flappy-bird.png');
-    position: absolute;
-    width: 60px;
-    height: 45px;
-    left: 220px;
-    bottom: 100px;
+  background-image: url("flappy-bird.png");
+  position: absolute;
+  width: 60px;
+  height: 45px;
+  left: 220px;
+  bottom: 100px;
 }
 
 .obstacle {
-    background-image: url('flappybird-pipe.png');
-    width: 60px;
-    height: 300px;
-    position: absolute;
+  background-image: url("flappybird-pipe.png");
+  width: 60px;
+  height: 300px;
+  position: absolute;
 }
 
 .topObstacle {
-    background-image: url('flappybird-pipe.png');
-    transform: rotate(180deg);
-    width: 60px;
-    height: 300px;
-    position: absolute;
+  background-image: url("flappybird-pipe.png");
+  transform: rotate(180deg);
+  width: 60px;
+  height: 300px;
+  position: absolute;
 }
 
 @keyframes slideright {
-    from {
-        background-position: 10000%;
-    }
-    to {
-        background-position: 0%;
-    }
+  from {
+    background-position: 10000%;
   }
-  
-  @-webkit-keyframes slideright {
-    from {
-        background-position: 10000%;
-    }
-    to {
-        background-position: 0%;
-    }
+  to {
+    background-position: 0%;
   }
+}
 
-  .ground-container {
-      height: 150px;
-      width: 580px;
-      left: 80px;
-      position:  absolute;
+@-webkit-keyframes slideright {
+  from {
+    background-position: 10000%;
   }
-  
-  .ground-moving {
-    position: absolute;
-    top: 580px;
-    height: 150px;
-    background-image: url('bottom-background.png');
-    background-repeat: repeat-x;
-    animation: slideright 100s infinite linear;
-    -webkit-animation: slideright 100s infinite linear;
-    width: 100%;
-    z-index: +1;
+  to {
+    background-position: 0%;
   }
+}
 
+.ground-container {
+  height: 150px;
+  width: 580px;
+  left: 80px;
+  position: absolute;
+}
+
+.ground-moving {
+  position: absolute;
+  top: 580px;
+  height: 150px;
+  background-image: url("bottom-background.png");
+  background-repeat: repeat-x;
+  animation: slideright 100s infinite linear;
+  -webkit-animation: slideright 100s infinite linear;
+  width: 100%;
+  z-index: +1;
+}
+.score {
+  color: #fff;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 10;
+  font-size: 20px;
+}
+.newgame {
+  color: #fff;
+  position: absolute;
+  left: 150px;
+  top: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.active {
+  color: #fff;
+  position: absolute;
+  left: 250px;
+  top: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.active button,
+.newgame button {
+  width: 220px;
+  font-size: 20px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
